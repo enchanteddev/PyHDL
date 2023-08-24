@@ -22,5 +22,7 @@ Loading: And.hdl
 Loading: Or.hdl
 {'out': True}
 ```
+## Note
+Bus has not been implemented, i.e. multibit inputs and outputs will not work as of now. Will be implemented soon.
 
 Made by Kaushik.
