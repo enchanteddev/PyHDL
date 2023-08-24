@@ -1,6 +1,10 @@
 from parse import remove_comments, parse_chip_call
 
+# counter = 0
 def nand(a: bool, b: bool) -> bool:
+    # global counter
+    # counter += 1
+    # print(f"Used Nand {counter} times")
     return not(a and b)
 
 
@@ -81,15 +85,15 @@ class Nand(Gate):
 
 Nand()
 
-# Not = Gate(["in"], ["out"])
-# Not.call_stack = [(Nand(), {'a': 'in', 'b': 'in', 'out': 'out'})]
-# # print(Not.run({'in': False}))
+# # Not = Gate(["in"], ["out"])
+# # Not.call_stack = [(Nand(), {'a': 'in', 'b': 'in', 'out': 'out'})]
+# # # print(Not.run({'in': False}))
 
-# And = Gate(["a", "b"], ["out"])
-# And.call_stack = [(Nand(), {'a': 'a', 'b': 'b', 'out': 'o1'}), (Not, {'in': 'o1', 'out': 'out'})]
+# # And = Gate(["a", "b"], ["out"])
+# # And.call_stack = [(Nand(), {'a': 'a', 'b': 'b', 'out': 'o1'}), (Not, {'in': 'o1', 'out': 'out'})]
 
-# And = Gate.fp('And.hdl')
-# print(And.run({'a': True, 'b': True}))
+# # And = Gate.fp('And.hdl')
+# # print(And.run({'a': True, 'b': True}))
 
-Mux = Gate.fp('Mux.hdl')
-print(Mux.run({'a': True, 'b': False, 'sel': True}))
+# Mux = Gate.fp('Xor.hdl')
+# print(Mux.run({'a': True, 'b': False}))
