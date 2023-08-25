@@ -32,6 +32,19 @@ def parse_chip_call(input_string):
     
     for component in components:
         key, value = component.split('=')
-        result_dict[key] = value
+        result_dict[key.strip()] = value.strip()
     
     return result_dict
+
+def extract_and_sort_values(d, s):
+    selected_values = []
+
+    for key, value in d.items():
+        if key.startswith(s + '['):
+            index = int(key[len(s) + 1:-1])
+            selected_values.append((index, value))
+
+    selected_values.sort(key=lambda x: x[0])
+    sorted_values = [value for index, value in selected_values]
+
+    return sorted_values
