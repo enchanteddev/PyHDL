@@ -1,4 +1,20 @@
-def remove_comments(code: str) -> str:
+import re
+
+def remove_comments(input_string):
+    # Regular expression pattern to match /* ... */ style comments
+    pattern = r'/\*.*?\*/'
+    cleaned_string = re.sub(pattern, '', input_string, flags=re.DOTALL)
+    
+    # Remove single-line comments (//) by splitting lines and keeping only non-comment parts
+    lines = cleaned_string.split('\n')
+    filtered_lines = []
+    for line in lines:
+        line = line.split('//')[0]  # Remove everything after // in the line
+        filtered_lines.append(line.strip())
+    
+    return ''.join(filtered_lines)
+
+def _remove_comments_old(code: str) -> str:
     lines = code.splitlines()
     no_comm = ''
     in_comment = False
